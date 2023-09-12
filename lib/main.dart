@@ -1,3 +1,4 @@
+import 'package:demo_bloc/navigation_drawer/nav_drawer_ui.dart';
 import 'package:demo_bloc/remote_bloc.dart';
 import 'package:demo_bloc/remote_event.dart';
 import 'package:demo_bloc/remote_state.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const Scaffold(
-        body: MyHomePage(),
+        body: NavDrawer(),
       ),
     );
   }
@@ -46,8 +47,8 @@ class _MyHomePageState extends State<MyHomePage> {
           stream: bloc.stateController.stream, // truyền stream vào để lắng nghe
           initialData: bloc.state, //giá trị khởi đầu của state
           builder:
-              (BuildContext context, AsyncSnapshot<RemoteState> snaphshot) {
-            return Text("Âm lượng hiện tại: ${snaphshot.data!.volume}"); // update UI
+              (BuildContext context, AsyncSnapshot<RemoteState> snapshot) {
+            return Text("Âm lượng hiện tại: ${snapshot.data!.volume}"); // update UI
           },
         ),
       ),
