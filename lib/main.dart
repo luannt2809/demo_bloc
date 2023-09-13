@@ -1,3 +1,4 @@
+import 'package:demo_bloc/call_api//demo_bloc_page.dart';
 import 'package:demo_bloc/navigation_drawer/nav_drawer_ui.dart';
 import 'package:demo_bloc/remote_bloc.dart';
 import 'package:demo_bloc/remote_event.dart';
@@ -20,9 +21,11 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Scaffold(
-        body: NavDrawer(),
-      ),
+      // home: const Scaffold(
+      //   body: NavDrawer(),
+      // ),
+
+      home: DemoBlocPage(),
     );
   }
 }
